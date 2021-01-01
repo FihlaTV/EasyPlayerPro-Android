@@ -64,7 +64,7 @@ android {
 
     android.applicationVariants.all { variant ->
         variant.outputs.all {
-            outputFileName = "EasyPlayerPro-${variant.versionCode}-${variant.versionName}.apk"
+            outputFileName = "QtuneTVPlayerPro-${variant.versionCode}-${variant.versionName}.apk"
         }
     }
 }

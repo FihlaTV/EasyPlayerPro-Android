@@ -89,7 +89,7 @@ public class SplashActivity extends AppCompatActivity {
         }
 
         TextView txtVersion = (TextView) findViewById(R.id.txt_version);
-        txtVersion.setText(String.format("EasyPlayer %s", versionName));
+        txtVersion.setText(String.format("QtuneTVPlayer %s", versionName));
 
     }
 

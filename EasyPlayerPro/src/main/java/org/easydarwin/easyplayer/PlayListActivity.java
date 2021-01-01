@@ -135,7 +135,7 @@ public class PlayListActivity extends AppCompatActivity implements View.OnClickL
                 int audienceNumber = mCursor.getInt(mCursor.getColumnIndex(VideoSource.AUDIENCE_NUMBER));
 
                 if (audienceNumber > 0) {
-                    plvh.mAudienceNumber.setText(String.format("当前观看人数:%d", audienceNumber));
+                    plvh.mAudienceNumber.setText(String.format("Current viewers: %d", audienceNumber));
                     plvh.mAudienceNumber.setVisibility(View.VISIBLE);
                 } else {
                     plvh.mAudienceNumber.setVisibility(View.GONE);
@@ -228,7 +228,7 @@ public class PlayListActivity extends AppCompatActivity implements View.OnClickL
         final int pos = holder.getAdapterPosition();
 
         if (pos != -1) {
-            new AlertDialog.Builder(this).setItems(new CharSequence[]{"修改", "删除"}, new DialogInterface.OnClickListener() {
+            new AlertDialog.Builder(this).setItems(new CharSequence[]{"modify", "delete"}, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
                     if (i == 0) {
@@ -236,8 +236,8 @@ public class PlayListActivity extends AppCompatActivity implements View.OnClickL
                     } else {
                         new AlertDialog
                                 .Builder(PlayListActivity.this)
-                                .setMessage("确定要删除该地址吗？")
-                                .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                                .setMessage("Are you sure you want to delete this address？")
+                                .setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialogInterface, int i) {
                                         mCursor.moveToPosition(pos);
@@ -247,7 +247,7 @@ public class PlayListActivity extends AppCompatActivity implements View.OnClickL
                                         mRecyclerView.getAdapter().notifyItemRemoved(pos);
                                     }
                                 })
-                                .setNegativeButton("取消", null)
+                                .setNegativeButton("cancel", null)
                                 .show();
                     }
                 }
@@ -262,7 +262,7 @@ public class PlayListActivity extends AppCompatActivity implements View.OnClickL
         //与上次点击返回键时刻作差
         if ((System.currentTimeMillis() - mExitTime) > 2000) {
             //大于2000ms则认为是误操作，使用Toast进行提示
-            Toast.makeText(this, "再按一次退出程序", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Press again to exit the program", Toast.LENGTH_SHORT).show();
             //并记录下本次点击“返回键”的时刻，以便下次进行判断
             mExitTime = System.currentTimeMillis();
         } else {
@@ -299,8 +299,8 @@ public class PlayListActivity extends AppCompatActivity implements View.OnClickL
 
         final AlertDialog dlg = new AlertDialog.Builder(PlayListActivity.this)
                 .setView(view)
-                .setTitle("请输入播放地址")
-                .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                .setTitle("Please enter the playback address")
+                .setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         String url = String.valueOf(edit.getText());
@@ -312,7 +312,7 @@ public class PlayListActivity extends AppCompatActivity implements View.OnClickL
                         if (url.toLowerCase().indexOf("rtsp://") != 0 && url.toLowerCase().indexOf("rtmp://") != 0 &&
                             url.toLowerCase().indexOf("http://") != 0 && url.toLowerCase().indexOf("https://") != 0 &&
                                 url.toLowerCase().indexOf("hls://") != 0) {
-                            Toast.makeText(PlayListActivity.this,"不是合法的地址，请重新添加.",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(PlayListActivity.this,"Not a correct address, please add it again.",Toast.LENGTH_SHORT).show();
                             return;
                         }
 
@@ -335,7 +335,7 @@ public class PlayListActivity extends AppCompatActivity implements View.OnClickL
                         }
                     }
                 })
-                .setNegativeButton("取消", null)
+                .setNegativeButton("Cancel", null)
                 .create();
 
         dlg.setOnShowListener(new DialogInterface.OnShowListener() {

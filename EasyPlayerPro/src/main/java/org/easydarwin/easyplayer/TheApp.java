@@ -13,7 +13,7 @@ import org.easydarwin.easyplayer.data.EasyDBHelper;
  */
 public class TheApp extends Application {
 
-    public static final String DEFAULT_SERVER_IP = "cloud.easydarwin.org";
+    public static final String DEFAULT_SERVER_IP = "rtmp://live.qtune.io:1935/live/787ed1c9-1aa2-46a2-a3ce-bca844fe4809";
     public static SQLiteDatabase sDB;
 
     @Override

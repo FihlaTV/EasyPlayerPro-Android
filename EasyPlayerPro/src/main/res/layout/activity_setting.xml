@@ -22,7 +22,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="设置"
+                    android:text="Set up"
                     android:gravity="center"
                     android:textColor="#ffffff"
                     android:textSize="18sp"
@@ -53,7 +53,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="UDP模式观看视频(默认使用TCP模式)"
+                android:text="Watch video in UDP mode (TCP mode is used by default)"
                 android:textSize="15sp"
                 android:textColor="#4c4c4c"/>
 
@@ -83,7 +83,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="使用MediaCodec解码"
+                android:text="Use MediaCodec to decode"
                 android:textSize="15sp"
                 android:textColor="#4c4c4c"/>
 

@@ -206,7 +206,7 @@ public class ProVideoActivity extends AppCompatActivity {
         mVideoView.setOnErrorListener(new IMediaPlayer.OnErrorListener() {
             @Override
             public boolean onError(IMediaPlayer iMediaPlayer, int i, int i1) {
-                Log.i(TAG, "播放错误");
+                Log.i(TAG, "Playback error");
                 mBinding.videoView.setVisibility(View.GONE);
                 mBinding.videoView2.setVisibility(View.GONE);
                 mProgress.setVisibility(View.GONE);
@@ -226,7 +226,7 @@ public class ProVideoActivity extends AppCompatActivity {
         mVideoView.setOnCompletionListener(new IMediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(IMediaPlayer iMediaPlayer) {
-                Log.i(TAG, "播放完成");
+                Log.i(TAG, "Play complete");
                 mProgress.setVisibility(View.GONE);
 
                 if (mVideoPath.toLowerCase().startsWith("rtsp") ||
@@ -324,7 +324,7 @@ public class ProVideoActivity extends AppCompatActivity {
         mVideoView.post(mSpeedCalcTask);
 
         if (BuildConfig.DEBUG) {
-            mBinding.videoView2.setVideoPath("rtmp://13088.liveplay.myqcloud.com/live/13088_65829b3d3e");
+            mBinding.videoView2.setVideoPath("rtmp://live.qtune.io:1935/live/787ed1c9-1aa2-46a2-a3ce-bca844fe4809");
             mBinding.videoView2.setShowing(false);
             mBinding.videoView2.start();
         }
@@ -422,7 +422,7 @@ public class ProVideoActivity extends AppCompatActivity {
 
     public void onChangePlayMode(View view) {
         mMode = mVideoView.toggleAspectRatio();
-        Log.i(TAG, "画面模式：" + mMode);
+        Log.i(TAG, "Picture mode：" + mMode);
     }
 
     /*
@@ -446,7 +446,7 @@ public class ProVideoActivity extends AppCompatActivity {
         final String picture = mVideoView.takePicture(file.getPath());
 
         if (!TextUtils.isEmpty(picture)) {
-            Toast.makeText(ProVideoActivity.this,"图片已保存", Toast.LENGTH_SHORT).show();
+            Toast.makeText(ProVideoActivity.this,"Picture saved", Toast.LENGTH_SHORT).show();
 
             if (mScanner == null) {
                 MediaScannerConnection connection = new MediaScannerConnection(ProVideoActivity.this, new MediaScannerConnection.MediaScannerConnectionClient() {

@@ -40,26 +40,26 @@ public class AboutActivity extends AppCompatActivity implements View.OnClickList
         });
 
         // 版本信息
-        binding.version.setText("EasyPlayer Pro播放器");
+        binding.version.setText("QtuneTV Pro player");
         binding.version.append("(");
 
         long activeDays = ProVideoView.getActiveDays(this,BuildConfig.PLAYER_KEY);
 
         SpannableString ss;
         if (activeDays >= 9999) {
-            ss = new SpannableString("激活码永久有效");
+            ss = new SpannableString("Activation code is permanently valid");
             ss.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.colorGREEN)),
                     0,
                     ss.length(),
                     Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
         } else if (activeDays > 0) {
-            ss = new SpannableString(String.format("激活码还剩%d天可用", activeDays));
+            ss = new SpannableString(String.format("Activation code has %d days left", activeDays));
             ss.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.colorYELLOW)),
                     0,
                     ss.length(),
                     Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
         } else {
-            ss = new SpannableString(String.format("激活码已过期(%d)", activeDays));
+            ss = new SpannableString(String.format("The activation code has expired (%d)", activeDays));
             ss.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.colorRED)),
                     0,
                     ss.length(),

@@ -60,7 +60,7 @@ public class MediaFilesActivity extends AppCompatActivity {
 
             @Override
             public CharSequence getPageTitle(int position) {
-                String text = position == 0 ? "抓拍" : "录像";
+                String text = position == 0 ? "Snapshot" : "Video";
                 SpannableStringBuilder ssb = new SpannableStringBuilder(text);
 
                 ForegroundColorSpan fcs = new ForegroundColorSpan(getResources().getColor(R.color.colorTheme2));//字体颜色设置为绿色
