@@ -5,7 +5,7 @@ android {
     buildToolsVersion '28.0.3'
 
     defaultConfig {
-        applicationId "org.easydarwin.easyplayer"
+        applicationId "com.mvp.live.qtune"
         minSdkVersion 19
         targetSdkVersion 26
         versionCode 14201211
