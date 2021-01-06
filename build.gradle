@@ -18,5 +18,5 @@ allprojects {
 }
 
 ext{
-    support_version='26.1.0'
+    support_version='29.0.2'
 }
